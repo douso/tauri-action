@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [macos-latest, ubuntu-latest, windows-latest]
+        platform: [macos-latest, ubuntu-22.04, windows-10]
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Checkout repository
@@ -35,7 +35,7 @@ jobs:
         run: yarn && yarn build
 
       - name: Build the app
-        uses: tauri-apps/tauri-action@v0.2
+        uses: tauri-apps/tauri-action@v0.3
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
