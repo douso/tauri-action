@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [macos-latest, ubuntu-22.04, windows-10]
+        platform: [macos-latest, ubuntu-22.04, windows-2019]
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Checkout repository
